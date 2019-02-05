@@ -8,15 +8,14 @@ source:
   url: https://github.com/weinbe58/QuSpin/archive/dev_{{ version }}.zip
 
 build:
-  string: py{{ CONDA_PY }}h{{PKG_HASH}}_{{ PKG_BUILDNUM }}
-  script: python setup.py install
+  script: $PYTHON setup.py install --omp
 
 requirements:
   build:
+    - python {{ python }}
     - {{compiler('cxx')}}
 
   host:
-    - python
     - numpy 1.10.*
  
   run:

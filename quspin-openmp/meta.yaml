@@ -8,16 +8,16 @@ source:
   url: https://github.com/weinbe58/QuSpin/archive/dev_{{ version }}.zip
 
 build:
-  string: py{{ CONDA_PY }}h{{PKG_HASH}}_{{ PKG_BUILDNUM }}
-  script: python setup.py install --omp
+  noarch_python: False
+  script: $PYTHON setup.py install --omp
 
 requirements:
   build:
-    - {{compiler('cxx')}} # [unix]
+    - python {{ python }}
+    - {{compiler('cxx')}}
     - llvm-openmp # [osx]
 
   host:
-    - python
     - numpy 1.10.*
  
   run:
