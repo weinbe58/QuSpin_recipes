@@ -8,18 +8,19 @@ source:
   url: https://github.com/weinbe58/QuSpin/archive/dev_{{ version }}.zip
 
 build:
-  script: $PYTHON setup.py install --omp
+  number: 0
+  script: python setup.py install
 
 requirements:
   build:
-    - python {{ python }}
     - {{compiler('cxx')}}
 
   host:
+    - python {{ python }}
     - numpy 1.10.*
  
   run:
-    - python
+    - python {{ python }}
     - {{ pin_compatible('numpy') }}
     - scipy >=0.19.0
     - six
