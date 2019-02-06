@@ -8,7 +8,8 @@ source:
   url: https://github.com/weinbe58/QuSpin/archive/dev_{{ version }}.zip
 
 build:
-  number: 0
+  number: {{ PKG_BUILDNUM }}
+  string: py{{ py_version | replace(".", "") }}h{{PKG_HASH}}_{{ PKG_BUILDNUM }}
   script: python setup.py install
 
 requirements:
@@ -16,11 +17,11 @@ requirements:
     - {{compiler('cxx')}}
 
   host:
-    - python {{ python }}
-    - numpy 1.10.*
+    - python {{ py_version }}
+    - numpy 1.11.*
  
   run:
-    - python {{ python }}
+    - python {{ py_version }}
     - {{ pin_compatible('numpy') }}
     - scipy >=0.19.0
     - six
