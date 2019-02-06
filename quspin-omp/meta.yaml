@@ -16,10 +16,10 @@ build:
 
 requirements:
   build:
+    - llvm-openmp # [osx]
     - {{compiler('cxx')}}
 
   host:
-    - llvm-openmp # [osx]
     - python {{ py_version }}
     - numpy 1.11.*
  
