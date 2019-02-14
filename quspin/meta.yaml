@@ -14,12 +14,12 @@ build:
 
 requirements:
   build:
-    - cython
     - {{compiler('cxx')}}
 
   host:
-    - python {{ py_version }}
+    - cython
     - numpy 1.11.*
+    - python {{ py_version }}
  
   run:
     - python {{ py_version }}

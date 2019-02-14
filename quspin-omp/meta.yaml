@@ -16,13 +16,14 @@ build:
 
 requirements:
   build:
-    - cython
     - llvm-openmp # [osx]
     - {{compiler('cxx')}}
 
   host:
-    - python {{ py_version }}
+    - cython
     - numpy 1.11.*
+    - python {{ py_version }}
+
  
   run:
     - llvm-openmp # [osx]
