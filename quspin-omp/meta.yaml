@@ -16,6 +16,7 @@ build:
 
 requirements:
   build:
+    - cython
     - llvm-openmp # [osx]
     - {{compiler('cxx')}}
 
