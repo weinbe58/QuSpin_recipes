@@ -13,6 +13,8 @@ build:
   script: python setup.py install --omp
   features:
     - omp
+  ignore_run_exports:
+    - boost
 
 requirements:
   build:
@@ -20,6 +22,7 @@ requirements:
     - {{compiler('cxx')}}
 
   host:
+    - boost
     - cython
     - numpy 1.11.*
     - python {{ py_version }}

@@ -11,12 +11,15 @@ build:
   number: {{ PKG_BUILDNUM }}
   string: py{{ py_version | replace(".", "") }}h{{PKG_HASH}}_{{ PKG_BUILDNUM }}
   script: python setup.py install
+  ignore_run_exports:
+    - boost
 
 requirements:
   build:
     - {{compiler('cxx')}}
 
   host:
+    - boost
     - cython
     - numpy 1.11.*
     - python {{ py_version }}
