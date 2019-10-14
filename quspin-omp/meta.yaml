@@ -1,5 +1,5 @@
-{% set version = "0.3.2" %}
-{% set build_num = "0" %} # set build number
+{% set version = "0.3.3" %}
+{% set build_num = "1" %} # set build number
 
 package:
   name: quspin
@@ -24,8 +24,8 @@ requirements:
 
   host:
     - boost
-    - cython
-    - numpy 1.11.*
+    - cython >=0.29
+    - numpy {{ numpy }}
     - python {{ py_version }}
 
  

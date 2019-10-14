@@ -2,3 +2,12 @@ py_version:
   - 2.7 # [not win]
   - 3.6
   - 3.7
+
+numpy:
+  - 1.16
+  - 1.17
+  - 1.17
+
+zip_keys:
+  - py_version
+  - numpy
