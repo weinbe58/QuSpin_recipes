@@ -4,9 +4,9 @@ py_version:
   - 3.7
 
 numpy:
-  - 1.16
-  - 1.17
-  - 1.17
+  - 1.15.1
+  - 1.15.1
+  - 1.15.1
 
 zip_keys:
   - py_version
