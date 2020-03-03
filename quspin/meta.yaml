@@ -1,5 +1,5 @@
-{% set version = "0.3.3" %}
-{% set build_num = "1" %} # set build number
+{% set version = "0.3.4" %}
+{% set build_num = "0" %} # set build number
 
 package:
   name: quspin
@@ -34,6 +34,7 @@ requirements:
     - dill
     - gmpy2 
     - numba
+    - numexpr
     
 test:
   imports:
