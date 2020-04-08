@@ -1,16 +1,26 @@
 # QuSpin_recipes
 Repository for conda-build recipes of QuSpin
 
-# conda build from recipes and upload
+
+% conda build from recipes and upload
 
 1) rm ~/miniconda3/conda-bld/src_cache/*.zip
 2) conda build purge-all
 3) run the builds 
 
-conda build QuSpin_recipes/quspin
+conda build QuSpin_recipes/quspin -—no-anaconda-upload
 
-conda build QuSpin_recipes/omp
-conda build QuSpin_recipes/quspin-omp
+conda build QuSpin_recipes/omp —-no-anaconda-upload
+conda build QuSpin_recipes/quspin-omp —-no-anaconda-upload
+
+% to test dependencies use -t option
+
+
+3a) test in a local conda env before uploading to anaconda cloud
+
+
+conda install quspin --use-local 
+conda install quspin omp --use-local 
 
 4) upload to anaconda cloud
 
@@ -19,5 +29,5 @@ conda install conda-build anaconda-client # if using miniconda
 upload omp build!!!
 anaconda upload -u weinbe58 (path_to_zip)
 
-# automatic upload
+% automatic upload
 conda config --set anaconda_upload yes
