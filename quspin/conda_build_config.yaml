@@ -1,13 +1,8 @@
 py_version:
-  - 2.7 # [not win]
   - 3.6
   - 3.7
+  - 3.8
 
 numpy:
   - 1.15.1
-  - 1.15.1
-  - 1.15.1
 
-zip_keys:
-  - py_version
-  - numpy
