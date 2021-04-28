@@ -8,12 +8,16 @@ Repository for conda-build recipes of QuSpin
 2) `conda build purge-all`
 3) run the builds 
 
-`conda build QuSpin_recipes/quspin --no-anaconda-upload`
+% build all at the same time (does not work for OSX because the omp package has to be built first)
+`conda build conda.recipe --no-anaconda-upload`
 
-`conda build QuSpin_recipes/omp --no-anaconda-upload`
-`conda build QuSpin_recipes/quspin-omp --no-anaconda-upload`
 
-% to test dependencies use -t option
+% build separately
+`conda build conda.recipe/quspin --no-anaconda-upload`
+
+`conda build conda.recipe/omp --no-anaconda-upload`
+`conda build conda.recipe/quspin-omp --no-anaconda-upload`
+
 
 
 3a) test in a local conda env before uploading to anaconda cloud
@@ -26,7 +30,7 @@ Repository for conda-build recipes of QuSpin
 
 `conda install conda-build anaconda-client` # if using miniconda
 
-% upload omp build: screws up number of downloads
+% upload omp build: screws up downloads stats on anaconca cloud
 `anaconda upload -u weinbe58 (path_to_zip)`
 
 % automatic upload # do NOT use

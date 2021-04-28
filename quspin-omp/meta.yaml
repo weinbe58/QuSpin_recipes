@@ -1,5 +1,5 @@
-{% set version = "0.3.5" %}
-{% set build_num = "0" %} # set build number
+{%  set version = "0.3.6" %}
+{%  set build_num = "0" %}
 
 package:
   name: quspin
@@ -19,28 +19,27 @@ build:
 
 requirements:
   build:
-    - llvm-openmp # [osx]
     - {{compiler('cxx')}}
+    - llvm-openmp # [osx]
 
   host:
-    - boost
-    - cython >=0.29
     - numpy {{ numpy }}
     - python {{ py_version }}
-
+    - cython >=0.29
+    - boost 
  
   run:
-    - llvm-openmp # [osx]
     - python {{ py_version }}
-    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible('numpy',max_pin='x') }} 
     - scipy >=0.19.1
-    - six
-    - joblib
-    - dill
+    - joblib 
+    - six 
+    - dill 
+    - numexpr 
     - gmpy2 
-    - numba
-    - numexpr
-    
+    - numba 
+    - llvm-openmp # [osx]
+
 test:
   imports:
     - quspin 
@@ -48,3 +47,4 @@ test:
 about:
   home: https://github.com/weinbe58/QuSpin.git
   license: BSD-3
+  license_file: LICENSE.rst
